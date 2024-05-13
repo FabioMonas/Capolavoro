@@ -29,8 +29,8 @@ let punteggiFinali = {};
 
 
 for (let i = 1; i <= 8; i++) {
-    punteggiFinali[i] = null; // Inizializza tutti i punteggi finali a null
-    punteggiRicevuti[i] = false; // Inizializza tutti i punteggi ricevuti a false
+  punteggiFinali[i] = null; // Inizializza tutti i punteggi finali a null
+  punteggiRicevuti[i] = false; // Inizializza tutti i punteggi ricevuti a false
 }
 
 // Creo un server WebSocket separato dal server HTTP
@@ -157,7 +157,7 @@ ws_server.on('connection', (ws) => {
             vincitoriMultipli.push(i);
           }
         }
-        console.log("vince "+vincitore);
+        console.log("vince " + vincitore);
         // Invia il risultato del confronto a tutti i client
         const risultatoConfronto = JSON.stringify({ 'vincitore': vincitoriMultipli });
         ws_server.clients.forEach((client) => {

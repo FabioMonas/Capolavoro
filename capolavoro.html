@@ -150,7 +150,7 @@
    <!-- Elementi HTML per visualizzare le connessioni e i giocatori -->
    <div id='B' class='connessioni'></div>
    <div id='C' class='client'></div>
-   <div id='D' class='nonconn'>troppe connessioni</div>
+   <div id='D' class='nonconn'>Troppe connessioni</div>
 
    <!-- Elemento HTML per visualizzare l'immagine al centro -->
    <div class='centro' id='centroDiv'></div>
@@ -205,12 +205,12 @@
             const p1 = document.getElementById('p1');
             if (data.vincitore.length > 1) {
                const vincitori = data.vincitore.map((vincitore) => `Giocatore ${vincitore}`).join(', ');
-               p1.innerHTML = `Punteggio finale: ${punteggioAttuale}<br>Vincitori: ${vincitori}<br>La partita è in parità `;
+               p1.innerHTML = `PUNTEGGIO FINALE: ${punteggioAttuale}<br><br>VINCITORI: ${vincitori}<br><br>LA PARTITA È FINITA`;
             } else if (data.vincitore > 0 && data.vincitore.length <= 1) {
                const vincitori = data.vincitore.map((vincitore) => `Giocatore ${vincitore}`).join(', ');
-               p1.innerHTML = `Punteggio finale: ${punteggioAttuale}<br>Vincitore: ${vincitori}`;
+               p1.innerHTML = `PUNTEGGIO FINALE: ${punteggioAttuale}<br><br>VINCITORE: ${vincitori}<br><br>LA PARTITA È FINITA`;
             } else {
-               p1.innerHTML = `Punteggio finale: ${punteggioAttuale}<br>Nessun vincitore `;
+               p1.innerHTML = `PUNTEGGIO FINALE: ${punteggioAttuale}<br><br>NESSUN VINCITORE<br><br>LA PARTITA È FINITA`;
             }
             p1.style.visibility = 'visible';
             p.style.visibility = 'hidden';
@@ -306,7 +306,7 @@
          // Funzione per mostrare il punteggio finale
          function mostraPunteggioFinale() {
             punteggioFinale = punteggioAttuale;
-            p.innerHTML = `PUNTEGGIO FINALE: ${punteggioFinale}`;
+            p.innerHTML = `<br>PUNTEGGIO FINALE: ${punteggioFinale}<br><br>IN ATTESA DEGLI ALTRI GIOCATORI...`;
             p.style.visibility = 'visible';
             inviaPunteggioFinale();
          }
@@ -323,7 +323,7 @@
 
             // Quando il tempo arriva a 0, cambia l'immagine
             if (tempoRimanente < 0) {
-               tempoRimanente = 10; // resetta il contatore a 10 secondi quando arriva a 0
+               tempoRimanente = 20; // resetta il contatore a 10 secondi quando arriva a 0
                cambiaImmagine();
             }
          }
@@ -378,6 +378,5 @@ Il gioco termina dopo un certo numero di indovinelli o quando il tempo limite sc
 
 Questo gioco offre un'esperienza coinvolgente e competitiva, incoraggiando i giocatori a mettere alla prova le proprie conoscenze sulle città di tutto il mondo.
 
-Problemi del codice: il vincitore non sono riuscito a farlo comparire sullo schermo a causa di molteplici problemi che non sono riuscito a risolvere. Fonti: internet,Chat GPT-->
 
 </html>

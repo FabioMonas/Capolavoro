@@ -9,7 +9,7 @@ const http = require('http').Server(server);
 
 // Configuro una rotta per la radice del server, che invia il file HTML
 server.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, 'index.html'));
+  res.sendFile(path.join(__dirname, 'capolavoro.html'));
 });
 
 // Avvio del server HTTP sulla porta 3000

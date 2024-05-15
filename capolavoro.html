@@ -4,7 +4,14 @@
    <!-- Definizione dello stile CSS -->
    <style type="text/css">
       .background {
-         background-color: #70f8cf;
+         background-image: url('https://t4.ftcdn.net/jpg/02/24/03/21/360_F_224032170_7PfrDJYWjCw4Rs1WFvhPkiSPuD02sw1q.jpg');
+         background-size: cover;
+         /* Per coprire l'intero elemento con l'immagine */
+         color: white;
+         /* Colore del testo */
+         padding: 20px;
+         text-align: center;
+         /* Per centrare il testo */
       }
 
       .oggetto {
@@ -19,6 +26,17 @@
          float: left;
          margin: 5px;
          visibility: hidden;
+      }
+
+      .connessioni:hover {
+         background-color: #080808;
+      }
+      .punteggio:hover {
+         background-color: #080808;
+      }
+
+      .client:hover {
+         background-color: #080808;
       }
 
       .connessioni {
@@ -80,7 +98,7 @@
          background-color: rgb(253, 252, 250);
          color: white;
          height: 300px;
-         width: 350px;
+         width: 450px;
          text-align: center;
          font-size: 20px;
          border-width: 1px;
@@ -100,6 +118,7 @@
          top: 20%;
          left: 50%;
          font-size: 20px;
+
       }
 
       .h1 {
@@ -108,6 +127,9 @@
          top: 5%;
          left: 50%;
          font-size: 50px;
+         display: inline-block;
+         font-family: verdana;
+         
       }
 
       .azione-button {
@@ -119,11 +141,14 @@
          margin: 10px;
          padding: 10px;
          font-size: 16px;
-         background-color: #4CAF50;
          color: white;
          cursor: pointer;
          border-radius: 5px;
          font-size: 22px;
+      }
+
+      .azione-button:hover {
+         background-color: #2b632d;
       }
 
       .punteggio {
@@ -136,16 +161,95 @@
          height: 250px;
          width: 350px;
          border: solid black;
-         background-color: rgb(64, 64, 65);
-         color: rgb(253, 252, 252);
+         background-color: rgb(20, 20, 20);
          visibility: hidden;
+         animation: rainbow 10s infinite;
       }
+
+      @keyframes rainbow {
+      0% {color: red;}
+      10% {color: orange;}
+      20% {color: yellow;}
+      30% {color: green;}
+      40% {color: blue;}
+      50% {color: indigo;}
+      60% {color: violet;}
+      70% {color: pink;}
+      80% {color: purple;}
+      90% {color: cyan;}
+      100% {color: red;}
+    }
+      @keyframes rainbow2 {
+      0%  {background-color: blue;}
+      10% {background-color: indigo;}
+      20% {background-color: blue;}
+      30% {background-color: purple;}
+      40% {background-color: indigo;}
+      50% {background-color: blue;}
+      60% {background-color: purple;}
+      70% {background-color: indigo;}
+      80% {background-color: blue;}
+      90% {background-color: indigo;}
+      100% {background-color: purple;}
+      
+    }
+    @keyframes rainbow3 {
+      0%  {background-color: purple;}
+      10% {background-color: blue;}
+      20% {background-color: indigo;}
+      30% {background-color: purple;}
+      40% {background-color: blue;}
+      50% {background-color: indigo;}
+      60% {background-color: purple;}
+      70% {background-color: blue;}
+      80% {background-color: indigo;}
+      90% {background-color: purple;}
+      100% {background-color: blue;}
+
+      
+
+    }
+
+      .h1 span {
+      animation: rainbow 10s infinite;
+    }
+
+    .rainbow-button2 {
+      animation: rainbow2 20s infinite alternate;
+      transition: box-shadow 0.3s;
+    }
+    .rainbow-button3 {
+      animation: rainbow3 20s infinite alternate;
+      transition: box-shadow 0.3s;
+    }
+    .rainbow-button2:hover {
+      box-shadow: 0 4px 8px rgb(255, 255, 255);
+    }
+    .rainbow-button3:hover {
+      box-shadow: 0 4px 8px rgba(255, 255, 255);
+    }
    </style>
 </head>
 
 <body class="background">
    <!-- Intestazione del gioco -->
-   <h1 class="h1">INDOVINA LA CITTÀ</h1>
+   <h1 class="h1">
+      <span style="color: red;">I</span>
+      <span style="color: orange;">N</span>
+      <span style="color: yellow;">D</span>
+      <span style="color: green;">O</span>
+      <span style="color: blue;">V</span>
+      <span style="color: indigo;">I</span>
+      <span style="color: violet;">N</span>
+      <span style="color: pink;">A</span>
+      <span style="color: purple;">&nbsp;L</span>
+      <span style="color: cyan;">A</span>
+      <span style="color: red;">&nbsp;C</span>
+      <span style="color: orange;">I</span>
+      <span style="color: yellow;">T</span>
+      <span style="color: green;">T</span>
+      <span style="color: blue;">À</span>
+    </h1>
 
    <!-- Elementi HTML per visualizzare le connessioni e i giocatori -->
    <div id='B' class='connessioni'></div>
@@ -161,14 +265,15 @@
    <!-- Elemento HTML per visualizzare il punteggio finale -->
    <div id='punteggio' class='punteggio'></div>
 
-   <div id='p1' class='punteggio'></div>
+   <div id='p1' class='punteggio rainbow'></div>
 
    <!-- Pulsanti per le azioni (indovinare la città) -->
-   <button class="azione-button" id="n1" style="top: 65%; left: 45%;" onclick="eseguiAzione('dubai')">Dubai</button>
-   <button class="azione-button" id="n2" style="top: 65%; left: 54%;" onclick="eseguiAzione('roma')">Roma</button>
-   <button class="azione-button" id="n3" style="top: 75%; left: 45%;"
-      onclick="eseguiAzione('barcellona')">Barcellona</button>
-   <button class="azione-button" id="n4" style="top: 75%; left: 54%;" onclick="eseguiAzione('parigi')">Parigi</button>
+   <button class="azione-button rainbow-button3" id="n1" style="top: 65%; left: 45%;" onclick="eseguiAzione('dubai')">Dubai</button>
+   <button class="azione-button rainbow-button2" id="n2" style="top: 65%; left: 54%;" onclick="eseguiAzione('roma')">Roma</button>
+   <button class="azione-button rainbow-button2" id="n3" style="top: 75%; left: 45%;" onclick="eseguiAzione('barcellona')">Barcellona</button>
+   <button class="azione-button rainbow-button3" id="n4" style="top: 75%; left: 54%;" onclick="eseguiAzione('parigi')">Parigi</button>
+ 
+
 
    <!-- Script JavaScript per la logica del gioco -->
    <script>
@@ -204,13 +309,13 @@
             // Visualizza il punteggio finale e i vincitori
             const p1 = document.getElementById('p1');
             if (data.vincitore.length > 1) {
-               const vincitori = data.vincitore.map((vincitore) => `Giocatore ${vincitore}`).join(', ');
-               p1.innerHTML = `PUNTEGGIO FINALE: ${punteggioAttuale}<br><br>VINCITORI: ${vincitori}<br><br>LA PARTITA È FINITA`;
+               const vincitori = data.vincitore.map((vincitore) => `GIOCATORE ${vincitore}`).join(', ');
+               p1.innerHTML = `<br>PUNTEGGIO FINALE: ${punteggioAttuale}<br><br>VINCITORI:<br>${vincitori}<br><br>LA PARTITA È FINITA`;
             } else if (data.vincitore > 0 && data.vincitore.length <= 1) {
-               const vincitori = data.vincitore.map((vincitore) => `Giocatore ${vincitore}`).join(', ');
-               p1.innerHTML = `PUNTEGGIO FINALE: ${punteggioAttuale}<br><br>VINCITORE: ${vincitori}<br><br>LA PARTITA È FINITA`;
+               const vincitori = data.vincitore.map((vincitore) => `GIOCATORE ${vincitore}`).join(', ');
+               p1.innerHTML = `<br>PUNTEGGIO FINALE: ${punteggioAttuale}<br><br>VINCITORE:<br>${vincitori}<br><br>LA PARTITA È FINITA`;
             } else {
-               p1.innerHTML = `PUNTEGGIO FINALE: ${punteggioAttuale}<br><br>NESSUN VINCITORE<br><br>LA PARTITA È FINITA`;
+               p1.innerHTML = `<br>PUNTEGGIO FINALE: ${punteggioAttuale}<br><br>NESSUN VINCITORE<br><br>LA PARTITA È FINITA`;
             }
             p1.style.visibility = 'visible';
             p.style.visibility = 'hidden';
@@ -376,7 +481,8 @@ Il giocatore che ottiene il punteggio più alto alla fine del gioco è dichiarat
 Fine del Gioco:
 Il gioco termina dopo un certo numero di indovinelli o quando il tempo limite scade. Viene visualizzato il punteggio finale e il vincitore viene annunciato.
 
-Questo gioco offre un'esperienza coinvolgente e competitiva, incoraggiando i giocatori a mettere alla prova le proprie conoscenze sulle città di tutto il mondo.
+Questo gioco offre un'esperienza coinvolgente e competitiva, incoraggiando i giocatori a mettere alla prova le proprie conoscenze sulle città di tutto il mondo. 
+-->
 
 
 </html>

@@ -1,4 +1,4 @@
-/*
+
 BACK-END:
 
 // Richiamo il modulo fs per la gestione dei file, express per il framework web e path per la gestione dei percorsi
@@ -182,7 +182,7 @@ ws_server.on('connection', (ws) => {
 
 FRONT-END:
 
-<html>
+
 
 <head>
    <!-- Definizione dello stile CSS -->
@@ -637,37 +637,6 @@ FRONT-END:
 
    </script>
 </body>
-
-<!-- Gioco: "Indovina la Città"
-Obiettivo del Gioco:
-Il gioco "Indovina la Città" è un'applicazione web multiplayer che sfida i giocatori a indovinare il nome della città basandosi su immagini visualizzate. I giocatori competono per ottenere il punteggio più alto indovinando correttamente il nome della città mostrata.
-
-Regole del Gioco:
-
-All'inizio del gioco, i giocatori si connettono tramite WebSocket al server (MAX. 2 giocatori).
-Viene visualizzata un'immagine di una città nel centro della schermata.
-Quattro pulsanti con nomi di città diversi vengono mostrati sotto l'immagine.
-I giocatori devono fare clic sul pulsante che corrisponde al nome della città visualizzata.
-Ogni risposta corretta incrementa il punteggio del giocatore.
-Il gioco procede mostrando immagini di città diverse a intervalli regolari.
-Il tempo per indovinare è limitato, e il contatore viene visualizzato sulla schermata.
-Dopo un certo numero di immagini visualizzate o quando il tempo si esaurisce, viene mostrato il punteggio finale.
-Il giocatore con il punteggio più alto alla fine vince.
-Elementi Chiave del Codice:
-
-Utilizzo di WebSocket per la comunicazione in tempo reale tra i giocatori e il server.
-Visualizzazione dinamica di immagini e nomi di città.
-Contatore che tiene traccia del tempo rimanente per ogni indovinello.
-Gestione del punteggio e determinazione del vincitore alla fine del gioco.
-Modalità di Vittoria:
-Il giocatore che ottiene il punteggio più alto alla fine del gioco è dichiarato vincitore.
-
-Fine del Gioco:
-Il gioco termina dopo un certo numero di indovinelli o quando il tempo limite scade. Viene visualizzato il punteggio finale e il vincitore viene annunciato.
-
-Questo gioco offre un'esperienza coinvolgente e competitiva, incoraggiando i giocatori a mettere alla prova le proprie conoscenze sulle città di tutto il mondo. 
--->
+     
 
 
-</html>
-*/

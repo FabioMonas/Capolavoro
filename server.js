@@ -1,3 +1,4 @@
+/*
 BACK-END:
 
 // Richiamo il modulo fs per la gestione dei file, express per il framework web e path per la gestione dei percorsi
@@ -669,3 +670,4 @@ Questo gioco offre un'esperienza coinvolgente e competitiva, incoraggiando i gio
 
 
 </html>
+*/
